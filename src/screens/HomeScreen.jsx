@@ -68,20 +68,21 @@ export default function HomeScreen({
         </div>
 
         {/* Promo banner */}
-<div className="home-promo">
-  <div className="home-promo__text">
-    <span className="home-promo__badge">{t("limitedOffer")}</span>
-    <h2 className="home-promo__title">{t("firstOrder")}</h2>
-    <p className="home-promo__sub">{t("useCode")}</p>
-  </div>
-  <div className="home-promo__img-wrap">
-    <img
-      src="https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=300"
-      alt="Doro Wat"
-      className="home-promo__img"
-    />
-  </div>
-</div>
+        <div className="home-promo">
+          <div className="home-promo__text">
+            <span className="home-promo__badge">{t("limitedOffer")}</span>
+            <h2 className="home-promo__title">{t("firstOrder")}</h2>
+            <p className="home-promo__sub">{t("useCode")}</p>
+          </div>
+          <div className="home-promo__img-wrap">
+            <img
+              src="https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=300"
+              alt="Doro Wat"
+              className="home-promo__img"
+            />
+          </div>
+        </div>
+      </div>
 
       {/* ── Search bar (overlapping hero) ── */}
       <div className="search-row">
