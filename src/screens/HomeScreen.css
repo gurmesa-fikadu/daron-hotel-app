@@ -9,7 +9,7 @@
   flex-direction: column;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
   overflow-x: hidden;
-  overflow-y:visible;
+  overflow-y: visible;
 }
 .screen--white {
   background: var(--offwhite);
@@ -40,30 +40,40 @@
   pointer-events: none;
 }
 .home-hero__top-bar {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  position:relative;
-  z-index:5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 5;
 }
 .home-hero__location {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
+/* ── Centered Avatar Logo Styling ── */
 .home-hero__avatar {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid rgba(242, 183, 5, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #24292e; /* Dark background matching logo edge */
+  border: 1.5px solid rgba(242, 183, 5, 0.6);
   flex-shrink: 0;
+  padding: 2px;
 }
 .home-hero__avatar img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
 }
+
 .home-hero__location-text {
   display: flex;
   flex-direction: column;
@@ -82,75 +92,28 @@
   align-items: center;
 }
 .home-hero__bell {
-
-
-width:42px;
-
-height:42px;
-
-
-border-radius:50%;
-
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-
-border:none;
-
-
-background:
-
-rgba(255,255,255,.15);
-
-
-
-color:white;
-
-
-
-backdrop-filter:
-
-blur(10px);
-
-
-
-cursor:pointer;
-
-
-
-transition:.25s;
-
-
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.25s;
 }
-
-
 
 .home-hero__bell:hover {
-
-
-background:
-
-rgba(255,255,255,.25);
-
-
+  background: rgba(255, 255, 255, 0.25);
 }
-
-
 
 .home-hero__bell:active {
-
-
-transform:scale(.9);
-
-
+  transform: scale(0.9);
 }
-.home-hero__bell:hover {
-  background: rgba(255, 255, 255, 0.14);
-}
+
 .home-hero__bell-dot {
   position: absolute;
   top: 9px;
@@ -236,13 +199,13 @@ transform:scale(.9);
 }
 
 /* Search row */
-.search-row{
-    display:flex;
-    gap:10px;
-    padding:16px;
-    margin-top:0;
-    position:relative;
-    z-index:1;
+.search-row {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
 }
 .search-bar {
   flex: 1;
@@ -398,51 +361,35 @@ transform:scale(.9);
   }
 }
 .home-actions {
-
-  display:flex;
-  align-items:center;
-  gap:12px;
-  position:relative;
-  z-index:300;
-
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 300;
 }
 
-
-.home-actions .language-switcher__button{
-
-  background:rgba(255,255,255,0.15);
-
-  color:white;
-
+.home-actions .language-switcher__button {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
 }
 
-
-.home-actions .language-switcher__button:hover{
-
-  background:rgba(255,255,255,0.25);
-
+.home-actions .language-switcher__button:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
-/* Fix language dropdown not covering page */
+
 .language-switcher {
-  position:relative;
-  z-index:99999;
+  position: relative;
+  z-index: 99999;
 }
-
 
 .language-switcher__menu {
-  position:absolute;
-  top:50px;
-  right:0;
-  z-index:99999;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  z-index: 99999;
 }
 
-
-
-
-
-
-
-/* ── Tablet (768px+) ── */
+/* Responsive Media Queries */
 @media (min-width: 768px) {
   .screen {
     max-width: 100%;
@@ -483,7 +430,6 @@ transform:scale(.9);
   }
 }
 
-/* ── Desktop (1024px+) ── */
 @media (min-width: 1024px) {
   .home-hero {
     padding: 32px 40px 64px;
@@ -514,15 +460,8 @@ transform:scale(.9);
     grid-template-columns: repeat(4, 1fr);
     gap: 22px;
   }
-  .dish-card__name {
-    font-size: 15px;
-  }
-  .dish-card__price {
-    font-size: 15px;
-  }
 }
 
-/* ── Large desktop (1440px+) ── */
 @media (min-width: 1440px) {
   .screen {
     max-width: 1400px;
