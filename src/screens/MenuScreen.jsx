@@ -7,6 +7,9 @@ import LanguageSwitcher from "../components/LanguageSwitcher";
 import DishCard from "../components/DishCard";
 import BottomNav from "../components/BottomNav";
 
+// 1. Import your custom logo image
+import logoImg from "../assets/a.jpg";
+
 export default function MenuScreen({
   dishes = [],
   categories = [],
@@ -38,10 +41,11 @@ export default function MenuScreen({
       <div className="home-hero home-hero--menu">
         <div className="home-hero__top-bar">
           <div className="home-hero__location">
+            {/* 2. Updated Avatar Image */}
             <div className="home-hero__avatar">
               <img
-                src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=80"
-                alt="User"
+                src={logoImg}
+                alt="Daron Hotel Logo"
               />
             </div>
 
@@ -60,7 +64,7 @@ export default function MenuScreen({
                 >
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
-                Addis Ababa
+                Dukem
               </span>
             </div>
           </div>

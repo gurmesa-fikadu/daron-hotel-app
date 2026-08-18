@@ -1,4 +1,5 @@
-@import "./HomeScreen.css";s
+@import "./HomeScreen.css";
+
 .screen {
   width: 100%;
   max-width: 420px;
@@ -11,9 +12,11 @@
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
   overflow-x: hidden;
 }
+
 .screen--white {
   background: var(--offwhite);
 }
+
 .screen__scroll {
   flex: 1;
   overflow-y: auto;
@@ -23,13 +26,21 @@
 
 /* Dark hero header */
 .home-hero {
-  background: var(--charcoal);
-  border-radius: 0 0 28px 28px;
-  padding: 18px 18px 55px;
+  background: #1f2118;
+  padding: 22px 20px 90px;
+  border-radius: 0 0 34px 34px;
   position: relative;
   overflow: visible;
   z-index: 1;
 }
+
+.home-hero--menu {
+  background: #1f1d14;
+  padding: 22px 22px 60px;
+  border-bottom-left-radius: 34px;
+  border-bottom-right-radius: 34px;
+}
+
 .home-hero::after {
   content: '';
   position: absolute;
@@ -39,118 +50,103 @@
     radial-gradient(circle at 10% 90%, rgba(11, 107, 58, 0.12), transparent 50%);
   pointer-events: none;
 }
+
 .home-hero__top-bar {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  position:relative;
-  z-index:5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 5;
 }
+
 .home-hero__location {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
+
+/* ── Avatar Circle & Centered Logo ── */
 .home-hero__avatar {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid rgba(242, 183, 5, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #24292e;
+  border: 1.5px solid rgba(242, 183, 5, 0.6);
   flex-shrink: 0;
+  padding: 2px;
 }
+
 .home-hero__avatar img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
 }
+
 .home-hero__location-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
 }
+
 .home-hero__delivery-label {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.55);
-  font-weight: 400;
+  color: #d8d8d8;
+  font-size: 13px;
 }
+
 .home-hero__city {
-  font-size: 14px;
-  color: #fff;
-  font-weight: 600;
+  color: white;
+  font-weight: 700;
+  font-size: 22px;
   display: flex;
   align-items: center;
 }
-.home-hero__bell {
 
-
-width:42px;
-
-height:42px;
-
-
-border-radius:50%;
-
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-
-border:none;
-
-
-background:
-
-rgba(255,255,255,.15);
-
-
-
-color:white;
-
-
-
-backdrop-filter:
-
-blur(10px);
-
-
-
-cursor:pointer;
-
-
-
-transition:.25s;
-
-
+.home-actions,
+.home-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 10;
 }
 
+.home-actions .language-switcher__button {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
 
+.home-actions .language-switcher__button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.home-hero__bell {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.25s;
+}
 
 .home-hero__bell:hover {
-
-
-background:
-
-rgba(255,255,255,.25);
-
-
+  background: rgba(255, 255, 255, 0.25);
 }
-
-
 
 .home-hero__bell:active {
-
-
-transform:scale(.9);
-
-
+  transform: scale(0.9);
 }
-.home-hero__bell:hover {
-  background: rgba(255, 255, 255, 0.14);
-}
+
 .home-hero__bell-dot {
   position: absolute;
   top: 9px;
@@ -175,6 +171,7 @@ transform:scale(.9);
   overflow: hidden;
   z-index: 1;
 }
+
 .home-promo::before {
   content: '';
   position: absolute;
@@ -185,10 +182,12 @@ transform:scale(.9);
   background: repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 16px);
   opacity: 0.7;
 }
+
 .home-promo__text {
   flex: 1;
   z-index: 1;
 }
+
 .home-promo__badge {
   display: inline-block;
   font-size: 10px;
@@ -201,6 +200,7 @@ transform:scale(.9);
   border-radius: 20px;
   margin-bottom: 10px;
 }
+
 .home-promo__title {
   font-family: 'Playfair Display', serif;
   font-size: 22px;
@@ -208,15 +208,18 @@ transform:scale(.9);
   color: var(--gold);
   font-weight: 700;
 }
+
 .home-promo__sub {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.78);
   margin-top: 6px;
 }
+
 .home-promo__sub strong {
   color: var(--gold);
   font-weight: 600;
 }
+
 .home-promo__img-wrap {
   width: 96px;
   height: 96px;
@@ -229,6 +232,7 @@ transform:scale(.9);
   position: relative;
   z-index: 2;
 }
+
 .home-promo__img {
   width: 100%;
   height: 100%;
@@ -237,13 +241,14 @@ transform:scale(.9);
 
 /* Search row */
 .search-row {
-  display:flex;
-  gap:10px;
-  padding:0 16px;
-  margin-top:-32px;
-  position:relative;
-  z-index:20;
+  display: flex;
+  gap: 10px;
+  padding: 0 16px;
+  margin-top: -32px;
+  position: relative;
+  z-index: 20;
 }
+
 .search-bar {
   flex: 1;
   background: #fff;
@@ -254,10 +259,12 @@ transform:scale(.9);
   gap: 10px;
   box-shadow: 0 6px 18px rgba(28, 27, 24, 0.08);
 }
+
 .search-bar__icon {
   color: var(--ink-soft);
   flex-shrink: 0;
 }
+
 .search-bar__input {
   border: none;
   outline: none;
@@ -266,9 +273,11 @@ transform:scale(.9);
   color: var(--ink);
   width: 100%;
 }
+
 .search-bar__input::placeholder {
   color: #B0ACA4;
 }
+
 .search-filter-btn {
   width: 46px;
   height: 46px;
@@ -282,6 +291,7 @@ transform:scale(.9);
   flex-shrink: 0;
   transition: transform 0.15s;
 }
+
 .search-filter-btn:active {
   transform: scale(0.94);
 }
@@ -290,18 +300,21 @@ transform:scale(.9);
 .section {
   margin-top: 24px;
 }
+
 .section__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 14px;
 }
+
 .section__title {
   font-size: 17px;
   font-weight: 700;
   color: var(--ink);
   font-family: 'Playfair Display', serif;
 }
+
 .section__see-all {
   font-size: 12px;
   color: var(--green);
@@ -320,9 +333,11 @@ transform:scale(.9);
   padding-left: 16px;
   padding-right: 16px;
 }
+
 .chips-scroll::-webkit-scrollbar {
   display: none;
 }
+
 .chip {
   display: flex;
   align-items: center;
@@ -338,9 +353,11 @@ transform:scale(.9);
   flex-shrink: 0;
   transition: all 0.2s;
 }
+
 .chip__icon {
   font-size: 14px;
 }
+
 .chip--active {
   background: var(--green);
   color: #fff;
@@ -365,16 +382,20 @@ transform:scale(.9);
   text-align: center;
   color: var(--ink-soft);
 }
+
 .empty-state__icon {
   font-size: 36px;
   margin-bottom: 12px;
 }
+
 .empty-state__icon--big {
   font-size: 56px;
 }
+
 .empty-state--large {
   padding: 80px 20px;
 }
+
 .empty-state__title {
   font-size: 17px;
   font-weight: 700;
@@ -382,6 +403,7 @@ transform:scale(.9);
   margin-bottom: 6px;
   font-family: 'Playfair Display', serif;
 }
+
 .empty-state__sub {
   font-size: 13px;
   color: var(--ink-soft);
@@ -397,99 +419,16 @@ transform:scale(.9);
     font-size: 19px;
   }
 }
-.home-actions {
 
-  display:flex;
-  align-items:center;
-  gap:12px;
-  position:relative;
-  z-index:10;
-
-}
-
-
-.home-actions .language-switcher__button{
-
-  background:rgba(255,255,255,0.15);
-
-  color:white;
-
-}
-
-
-.home-actions .language-switcher__button:hover{
-
-  background:rgba(255,255,255,0.25);
-
-}
-/* Fix language dropdown not covering page */
+/* Language dropdown position */
 .language-switcher {
-  position:relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
 }
-
 
 .language-switcher__menu {
-  position:absolute;
-  top:50px;
-  right:0;
-  z-index:200;
-}
-.home-hero{
-    background:#1f2118;
-    padding:22px 20px 90px;
-    border-radius:0 0 34px 34px;
-    position:relative;
-}
-
-.home-hero__top-bar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.home-hero__location{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.home-hero__avatar img{
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    object-fit:cover;
-}
-
-.home-hero__location-text{
-    display:flex;
-    flex-direction:column;
-}
-
-.home-hero__delivery-label{
-    color:#d8d8d8;
-    font-size:13px;
-}
-
-.home-hero__city{
-    color:white;
-    font-weight:700;
-    font-size:22px;
-}
-
-.home-hero__actions{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-.home-hero--menu{
-
-    background:#1f1d14;
-
-    padding:22px 22px 60px;
-
-    border-bottom-left-radius:34px;
-
-    border-bottom-right-radius:34px;
-
+  position: absolute;
+  top: 50px;
+  right: 0;
+  z-index: 200;
 }
