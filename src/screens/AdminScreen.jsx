@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './AdminScreen.css'
 import Button from '../components/Button.jsx'
+import logo from '../assets/a_2.jpg'
 
 export default function AdminScreen({ dishes, setDishes, orders, setOrders, onBack }) {
   const [tab, setTab] = useState('dishes')
@@ -43,7 +44,12 @@ export default function AdminScreen({ dishes, setDishes, orders, setOrders, onBa
     <div className="admin-screen">
       {/* Top bar */}
       <div className="admin-topbar">
-        <h1 className="admin-topbar__title">Habesha Bites — Admin</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div className="home-hero__avatar">
+            <img src={logo} alt="PAAROOT Logo" />
+          </div>
+          <h1 className="admin-topbar__title">PAAROOT — Admin</h1>
+        </div>
         <div className="admin-topbar__actions">
           <button className="admin-topbar__back" onClick={onBack}>
             Exit to app
@@ -109,9 +115,8 @@ export default function AdminScreen({ dishes, setDishes, orders, setOrders, onBa
                 <span>Name</span>
                 <span>Category</span>
                 <span>Price</span>
-                <span>Available</span>
+                <span>Status</span>
                 <span>Actions</span>
-                <span>Cart</span>
               </div>
               {dishes.map((dish) => {
                 const isOn = dish.available !== false
@@ -122,7 +127,7 @@ export default function AdminScreen({ dishes, setDishes, orders, setOrders, onBa
                     <span className="admin-dish-row__cat">{dish.category}</span>
                     <span className="admin-dish-row__price">{dish.price.toLocaleString()} ETB</span>
                     <span className={`admin-dish-row__avail${isOn ? ' admin-dish-row__avail--on' : ' admin-dish-row__avail--off'}`}>
-                      {isOn ? 'On' : 'Hidden'}
+                      {isOn ? 'Shown' : 'Hidden'}
                     </span>
                     <div className="admin-dish-row__actions">
                       <button
@@ -163,9 +168,6 @@ export default function AdminScreen({ dishes, setDishes, orders, setOrders, onBa
                         </svg>
                       </button>
                     </div>
-                    <span className={`admin-dish-row__avail${isOn ? ' admin-dish-row__avail--on' : ' admin-dish-row__avail--off'}`}>
-                      {isOn ? 'Shown' : 'Hidden'}
-                    </span>
                   </div>
                 )
               })}
@@ -238,7 +240,7 @@ function DishFormModal({ dish, onClose, onSave }) {
       description: '',
       rating: 4.5,
       prepTime: 15,
-      restaurant: 'Habesha Bites Kitchen',
+      restaurant: 'PAAROOT Kitchen',
       gallery: [],
       available: true,
     }
