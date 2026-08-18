@@ -15,6 +15,7 @@ import AdminLogin from './admin/AdminLogin.jsx'
 
 import BottomNav from './components/BottomNav.jsx'
 import adminLogo from './assets/a.jpg'
+import profileLogo from './assets/a.jpg' // or './assets/a_3.jpg'
 
 const API_BASE = import.meta.env.VITE_API_URL || 'https://restaurant-backend-lrk6.onrender.com'
 
@@ -205,7 +206,7 @@ export default function App() {
       <div className="profile-header">
         <div className="profile-avatar">
           <img
-            src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300"
+            src={profileLogo}
             alt="profile"
           />
         </div>
