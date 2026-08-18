@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import './HomeScreen.css'
 import { useLanguage } from "../i18n/LanguageContext"
 import LanguageSwitcher from "../components/LanguageSwitcher.jsx"
-
 import DishCard from '../components/DishCard.jsx'
 import BottomNav from '../components/BottomNav.jsx'
+
+// 1. Import your logo image
+import logoImg from '../assets/a.jpg' // Adjust path if stored elsewhere (e.g. '../assets/a.jpg')
 
 export default function HomeScreen({
   dishes = [],
@@ -38,10 +40,12 @@ export default function HomeScreen({
       <div className="home-hero">
         <div className="home-hero__top-bar">
           <div className="home-hero__location">
+            {/* 2. Updated Avatar Image */}
             <div className="home-hero__avatar">
               <img
-                src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=80"
-                alt="User avatar"
+                src={logoImg}
+                alt="Daron Hotel Logo"
+                style={{ objectFit: 'cover', borderRadius: '50%' }}
               />
             </div>
             <div className="home-hero__location-text">
