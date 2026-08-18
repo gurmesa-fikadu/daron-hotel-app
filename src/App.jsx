@@ -14,6 +14,7 @@ import MenuManager from './admin/MenuManager.jsx'
 import AdminLogin from './admin/AdminLogin.jsx'
 
 import BottomNav from './components/BottomNav.jsx'
+import adminLogo from './assets/a.jpg'
 
 const API_BASE = import.meta.env.VITE_API_URL || 'https://restaurant-backend-lrk6.onrender.com'
 
@@ -198,37 +199,49 @@ export default function App() {
       />
 
       <Route
-        path="/profile"
-        element={
-          <div className="profile-screen">
-            <div className="profile-header">
-              <div className="profile-avatar">
-                <img
-                  src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300"
-                  alt="profile"
-                />
-              </div>
-              <h2>Welcome</h2>
-            </div>
-            <div className="profile-card">
-              <button
-                className="profile-item"
-                onClick={() => navigate('/admin')}
-              >
-                <div>
-                  <h4>Admin Panel</h4>
-                  <p>Restaurant management</p>
-                </div>
-              </button>
-            </div>
-            <BottomNav
-              activeScreen={getActiveTab()}
-              onNavigate={handleNavigate}
-              cartCount={cartCount}
-            />
+  path="/profile"
+  element={
+    <div className="profile-screen">
+      <div className="profile-header">
+        <div className="profile-avatar">
+          <img
+            src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300"
+            alt="profile"
+          />
+        </div>
+        <h2>Welcome</h2>
+      </div>
+      <div className="profile-card">
+        <button
+          className="profile-item"
+          onClick={() => navigate('/admin')}
+          style={{ display: 'flex', alignItems: 'center', gap: '14px' }}
+        >
+          <img
+            src={adminLogo}
+            alt="Admin Logo"
+            style={{
+              width: '44px',
+              height: '44px',
+              borderRadius: '50%',
+              objectFit: 'cover',
+              border: '1.5px solid #E50914'
+            }}
+          />
+          <div>
+            <h4>Admin Panel</h4>
+            <p>Restaurant management</p>
           </div>
-        }
+        </button>
+      </div>
+      <BottomNav
+        activeScreen={getActiveTab()}
+        onNavigate={handleNavigate}
+        cartCount={cartCount}
       />
+    </div>
+  }
+/>
 
       <Route
         path="/admin"
